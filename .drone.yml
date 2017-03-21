@@ -2,6 +2,7 @@ pipeline:
   build:
     image: node:6.9
     commands:
+      - sleep 10
       - npm install
       - npm run --silent build || true
       - npm run test
@@ -11,13 +12,13 @@ services:
     image: rabbitmq:alpine
   gateway:
     image: ecsdevops/aurora-gateway
+    entrypoint: /bin/bash
     command:
-      - npm
-      - run
-      - ci
+      - -c
+      - sleep 5 && npm run ci
   manager:
     image: ecsdevops/aurora-manager
     entrypoint: /bin/bash
     command:
       - -c
-      - sleep 5 && npm run ci
+      - sleep 8 && npm run ci
