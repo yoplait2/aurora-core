@@ -2,13 +2,16 @@ pipeline:
   build:
     image: node:6.9
     commands:
-        - npm install
-        - npm run --silent build || true
-        - npm run test
+      - npm install
+      - npm run --silent build || true
+      - npm run test
 
 services:
   rabbit:
     image: rabbitmq:alpine
   manager:
     image: ecsdevops/aurora-manager
-    command: npm run ci
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - sleep 5 && npm run ci
