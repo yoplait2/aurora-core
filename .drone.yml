@@ -8,6 +8,8 @@ pipeline:
       - npm run test
 
 services:
+  redis:
+    image: redis:alpine
   rabbit:
     image: rabbitmq:alpine
   gateway:
