@@ -9,6 +9,12 @@ pipeline:
 services:
   rabbit:
     image: rabbitmq:alpine
+  gateway:
+    image: ecsdevops/aurora-gateway
+    command:
+      - npm
+      - run
+      - ci
   manager:
     image: ecsdevops/aurora-manager
     entrypoint: /bin/bash
