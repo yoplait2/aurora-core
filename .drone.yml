@@ -1,4 +1,4 @@
-peline:
+pipeline:
   build:
     image: node:6.9
     commands:
