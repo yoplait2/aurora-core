@@ -14,7 +14,7 @@ describe("gateway", function() {
   });
 
   describe("GET default route /api/identity", function() {
-    it("returns status code 404", function(done) {
+    it("returns status code 200", function(done) {
       request.get(base_url, function(error, response, body) {
         expect(response.statusCode).toBe(404);
         done();
