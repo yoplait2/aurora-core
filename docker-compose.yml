@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  api:
+    image: ecsdevops/aurora-gateway
+    ports:
+     - "3000:3000"
+  manager:
+    image: ecsdevops/aurora-manager
+    ports:
+     - "3001:3001"
+  core:
+    build: .
+    image: ecsdevops/aurora-core
+    ports:
+     - "3002:3002"
+  redis:
+    image: redis:alpine
+    ports:
+     - "6379"
+  rabbit:
+    image: rabbitmq:3-alpine
+    ports:
+     - "5672"
+     - "15672"
