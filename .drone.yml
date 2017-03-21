@@ -1,4 +1,4 @@
-pipeline:
+peline:
   build:
     image: node:6.9
     commands:
@@ -6,6 +6,12 @@ pipeline:
       - npm install --silent
       - npm run --silent build || true
       - npm run test
+
+  publish:
+    image: plugins/docker
+    repo: ecsdevops/aurora-core
+    username: ecsdevops
+    password: ${DOCKER_PASSWORD}
 
 services:
   redis:
