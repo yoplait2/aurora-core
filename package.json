@@ -1,5 +1,5 @@
 {
-  "name": "aurora-core",
+  "name": "service-core",
   "version": "1.0.0",
   "description": "Provides abstraction in order to interract with OpenStack services APIs",
   "author": "Bogdan Carpusor <bcarpusor@cloudbasesolutions.com>",
@@ -14,31 +14,41 @@
     "predev": "npm run clean",
     "dev": "concurrently \"npm run tsc-watch\" \"npm run nodemon\"",
     "prenodemon": "wait-on ./build/app.js",
-    "nodemon": "nodemon -r dotenv/config --delay 1500ms --watch dev.env --watch ./build --inspect \"./build/app.js\" dotenv_config_path=.env",
+    "ci": "node -r dotenv/config \"./build/app.js\" dotenv_config_path=.env.ci",
+    "prod": "node -r dotenv/config \"./build/app.js\" dotenv_config_path=.env.prod",
+    "nodemon": "nodemon -r dotenv/config --delay 1500ms --watch dev.env --watch ./build \"./build/app.js\" dotenv_config_path=.env",
     "tsc-watch": "tsc -w",
-    "lint": "tslint -c tslint.json \"./app/**/*.ts\""
+    "lint": "tslint -c tslint.json \"./app/**/*.ts\"",
+    "test": "./node_modules/.bin/jasmine"
   },
   "engines": {
     "node": "6.x",
     "npm": "3.x"
   },
   "dependencies": {
+    "body-parser": "^1.16.1",
     "core-js": "2.4.1",
     "dotenv": "^2.0.0",
     "express": "4.14.0",
+    "jasmine": "^2.5.3",
+    "object-hash": "^1.1.5",
     "rabbot": "^1.0.8",
     "request": "^2.79.0",
     "sequelize": "^3.29.0",
-    "serialize-error": "2.0.0"
+    "serialize-error": "2.0.0",
+    "winston": "2.2.0"
   },
   "devDependencies": {
+    "@types/body-parser": "0.0.34",
     "@types/express": "4.0.33",
     "@types/express-session": "0.0.32",
     "@types/morgan": "1.7.32",
+    "@types/object-hash": "^0.5.28",
     "@types/request": "0.0.37",
     "@types/validator": "5.7.34",
     "@types/winston": "0.0.28",
     "concurrently": "3.1.0",
+    "dotenv": "2.0.0",
     "nodemon": "1.11.0",
     "rimraf": "2.5.4",
     "tslint": "3.15.1",
