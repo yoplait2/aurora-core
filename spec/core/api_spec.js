@@ -11,7 +11,7 @@ describe("gateway", function() {
       beforeAll(function (done) {
         setTimeout(function () {
             done()
-        }, 2000);
+        }, 5000);
       });
       request.get(base_url, function(error, response, body) {
         expect(response.statusCode).toBe(404);
