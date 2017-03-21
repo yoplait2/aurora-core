@@ -14,7 +14,7 @@ export class RabbitClient {
   }
 
   connectClient(queueName: string) {
-    Topology.createTopology(this.rabbitConnection, queueName)
+    /*Topology.createTopology(this.rabbitConnection, queueName)
       .then(() => {
         RabbitClient.LOGGER.info('Successfully initialized RabbitMQ connection');
         this.rabbitConnection.startSubscription(queueName);
@@ -23,7 +23,7 @@ export class RabbitClient {
         RabbitClient.LOGGER.error('Error while trying to connect to RabbitMQ');
         RabbitClient.LOGGER.error(error);
         throw new InternalError(error);
-      });
+      });*/
   }
 
   /**
