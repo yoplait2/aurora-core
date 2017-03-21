@@ -11,3 +11,4 @@ services:
     image: rabbitmq:alpine
   manager:
     image: ecsdevops/aurora-manager
+    command: npm run ci

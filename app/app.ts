@@ -34,8 +34,8 @@ ServiceUtils.registerService()
     LOGGER.error(`Unable to register service - ${JSON.stringify(error)}`);  
     const apiRouter: Router = ApiRouterFactory.getApiRouter('CORE_NOTIFICATIONS');
     const app: Express = ExpressAppFactory.getExpressApp(apiRouter, null, errorMiddleware);
-    app.listen(parseInt(process.env.PORT), () => {
-     LOGGER.info(`Express server listening on port ${process.env.PORT}.`);
+    app.listen(APP_CONFIG.port, () => {
+     LOGGER.info(`Express server listening on port ${APP_CONFIG.port}.`);
     });
   });
 

@@ -26,12 +26,12 @@ export class AMQPTopology {
   public static LOGGER: Logger = LoggerFactory.getLogger();
 
   constructor() {
-    const config = JSON.parse(fs.readFileSync(process.env.TOPOLOGY_FILE_PATH, 'utf-8'));
+    const config = JSON.parse(fs.readFileSync(APP_CONFIG.topologyFile, 'utf-8'));
     this.connection = {
-      user: process.env.RABBIT_USER,
-      pass: process.env.RABBIT_PASSWORD,
-      server: [ process.env.RABBIT_HOST ],
-      port: process.env.RABBIT_PORT,
+      user: APP_CONFIG.rabbitUser,
+      pass: APP_CONFIG.rabbitUserPassword,
+      server: [ APP_CONFIG.rabbitHost ],
+      port: APP_CONFIG.rabbitPort,
       vhost: '%2f',
       timeout: 1000,
       failAfter: 30,
@@ -80,7 +80,7 @@ export class AMQPTopology {
     this.QUEUES.notifications = queueName;
 
 
-    return rabbit.configure({
+        return rabbit.configure({
       connection: this.connection,
       exchanges: this.exchanges,
       queues: this.queues,
