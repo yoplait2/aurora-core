@@ -42,7 +42,7 @@ export class AppConfig {
     this.gatewayRoutingPath = this.getStringEnvVar('GATEWAY_ROUTING_PATH');
     // optional environment variables
     this.redisPort = this.getIntegerEnvVar('REDIS_PORT', 6379);
-    this.redisHost = this.getStringEnvVar('REDIS_PORT', '127.0.0.1');
+    this.redisHost = this.getStringEnvVar('REDIS_HOST', '127.0.0.1');
 
     AppConfig.LOGGER.debug(`App config - ${JSON.stringify(this.toJSON())}`);
   }
