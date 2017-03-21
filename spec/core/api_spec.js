@@ -11,7 +11,7 @@ describe("gateway", function() {
     setTimeout(function () {
         console.log('start first test');
         done()
-    }, 5000);
+    }, 2000);
   });
 
   describe("GET default route /api/identity", function() {
