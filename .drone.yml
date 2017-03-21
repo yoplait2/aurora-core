@@ -6,6 +6,7 @@ pipeline:
       - npm install
       - npm run --silent build || true
       - npm run test
+      - sleep 10
 
 services:
   redis:
