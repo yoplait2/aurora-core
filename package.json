@@ -26,11 +26,7 @@
     "npm": "3.x"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "body-parser": "^1.16.1",
-=======
     "body-parser": "^1.17.1",
->>>>>>> cloudbase/master
     "core-js": "2.4.1",
     "dotenv": "^2.0.0",
     "express": "4.14.0",
@@ -40,11 +36,7 @@
     "request": "^2.79.0",
     "sequelize": "^3.29.0",
     "serialize-error": "2.0.0",
-<<<<<<< HEAD
-    "winston": "2.2.0"
-=======
     "winston": "^2.3.1"
->>>>>>> cloudbase/master
   },
   "devDependencies": {
     "@types/body-parser": "0.0.34",
