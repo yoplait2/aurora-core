@@ -1,6 +1,7 @@
 import winston = require('winston');
 import fs = require('fs');
 import { LoggerInstance } from 'winston';
+import { APP_CONFIG } from '../../config';
 
 export class LoggerFactory {
     private static logger: LoggerInstance;
@@ -27,7 +28,7 @@ export class LoggerFactory {
         };
 
         if (!LoggerFactory.logger) {
-            const logLevel = process.env.LOG_LEVEL;
+            const logLevel = APP_CONFIG.logLevel;
             LoggerFactory.logger = new winston.Logger({
                 colors: LoggerFactory.customColors,
                 transports: [
