@@ -12,6 +12,9 @@ pipeline:
     repo: ecsdevops/aurora-core
     username: ecsdevops
     password: ${DOCKER_PASSWORD}
+    tags:
+      - latest
+      - ${DRONE_COMMIT_SHA}
 
 services:
   redis:
