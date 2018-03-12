@@ -22,8 +22,8 @@
     "test": "./node_modules/.bin/jasmine"
   },
   "engines": {
-    "node": "9.x",
-    "npm": "5.x"
+    "node": "6.x",
+    "npm": "3.x"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
