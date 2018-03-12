@@ -1,4 +1,4 @@
-FROM node:6.9-onbuild
+FROM node:latest
 
 RUN npm run --silent build || true
 
